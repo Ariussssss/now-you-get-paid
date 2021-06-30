@@ -1,0 +1,108 @@
+@import './style/mixin.less';
+
+@pink: #ff8af5;
+@code-bg: #f6f6f6;
+@dark-code-bg: #20232a;
+@black: #121212;
+@dark-black: #aec2d3;
+
+.paid {
+  &-title,
+  &-tutorial {
+    text-align: center;
+    * {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+  &-title {
+    font-family: monospace;
+    font-size: 60px;
+    font-weight: bold;
+    color: #2c3e50;
+    .night(color, @pink);
+  }
+
+  &-tutorial {
+    font-size: 12px;
+    color: @black;
+    .night(color, @dark-black);
+    &-code {
+      margin: 10px;
+      padding: 10px;
+      word-break: normal;
+      word-wrap: normal;
+      white-space: pre;
+      overflow: auto;
+      color: @black;
+      .night(color, @dark-black);
+      background: @code-bg;
+      .night(background, @dark-code-bg);
+      border-radius: 4px;
+    }
+  }
+  &-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 80px 0;
+  }
+
+  &-bar {
+    margin: 120px 0 60px 0;
+    max-width: 300px;
+    width: 60%;
+    height: 25px;
+    border-radius: 30px;
+    background: #eaeaea;
+    .night(background, @dark-code-bg);
+    position: relative;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    &-inner {
+      height: 99%;
+      width: 0%;
+      position: relative;
+      border-radius: 30px;
+      background: @pink;
+      .night(background, @pink);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1),
+        0 1px 5px rgba(0, 0, 0, 0.3), 0 4px 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &-toast {
+    position: absolute;
+
+    color: #73446b;
+    .night(color, @dark-black);
+    background: #f9e6ff;
+    .night(background, #73446b);
+    padding: 5px 10px;
+    border-radius: 0.4em;
+    font-size: 14px;
+    transform: translate(-55%, -140%);
+    left: 100%;
+
+    p {
+      white-space: nowrap;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #f9e6ff;
+      .night(background, #73446b);
+      transform: rotate(45deg);
+      left: 50%;
+      margin-left: -4px;
+      bottom: -4px;
+      border-radius: 0 0 3px 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#+STARTUP: content
+* NOW YOU GET PAID
+
+  [[https://ariussssss.github.io/project/now-you-go-paid/][Preview]]
+
+** Usage
+   #+begin_src bash
+     pnpm i
+     npm run dev
+     npm run build
+   #+end_src
+** Thanks
+   Inspired by [[https://github.com/AngusWG][@AngusWG]]
